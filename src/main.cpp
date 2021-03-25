@@ -1596,24 +1596,14 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex)
 
 int64_t GetBlockValue(int nHeight)
 {
-    int64_t nSubsidy = 2 * COIN;
+    int64_t nSubsidy = 20 * COIN;
 
     if (nHeight < 2 && nHeight > 0) {
-      nSubsidy = 1200000 * COIN;
-    } else if (nHeight >= 2 && nHeight <= 10000) {
-      nSubsidy = 19 * COIN;
-    } else if (nHeight >= 10000 && nHeight <= 40000) {
-      nSubsidy = 199 * COIN;
-    } else if (nHeight >= 40000 && nHeight <= 200000) {
-      nSubsidy = 110 * COIN;
-    } else if (nHeight >= 200000 && nHeight <= 300000) {
-      nSubsidy = 24 * COIN;
-    } else if (nHeight >= 300000 && nHeight <= 400000) {
-      nSubsidy = 22 * COIN;
-    } else if (nHeight >= 400000 && nHeight <= 800000) {
-      nSubsidy = 19 * COIN;
+      nSubsidy = 10000000 * COIN;
+    } else if (nHeight >= 2 && nHeight <= 800000) {
+      nSubsidy = 20 * COIN;
     } else if (nHeight >= 800000) {
-      nSubsidy = 12 * COIN;
+      nSubsidy = 20 * COIN;
     }
 
     return nSubsidy;
