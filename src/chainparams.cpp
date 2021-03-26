@@ -91,12 +91,12 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xc2;
-        pchMessageStart[1] = 0x3d;
-        pchMessageStart[2] = 0x2a;
-        pchMessageStart[3] = 0x2e;
+        pchMessageStart[0] = 0xa6;
+        pchMessageStart[1] = 0x5d;
+        pchMessageStart[2] = 0xa2;
+        pchMessageStart[3] = 0xae;
         vAlertPubKey = ParseHex("04e0515d810726a0264cb4d8e505aac841a23b0b4b3b538708b91739d8054fa2ee019a3f4cc4b3ee812a9090ea9edc3bb3873709c8a78761fbf1722b1cf7cd6535");
-        nDefaultPort = 25333;
+        nDefaultPort = 66105;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // CBC starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
@@ -110,7 +110,7 @@ public:
         nMaturity = 20;
         nMasternodeCountDrift = 20;
         nModifierUpdateBlock = 510;
-        nMaxMoneyOut = 22000000 * COIN;
+        nMaxMoneyOut = 40000000 * COIN;
 
         const char* pszTimestamp = "This is the revolution of alt coins future is here this is the new world";
         CMutableTransaction txNew;
@@ -132,10 +132,10 @@ public:
         assert(hashGenesisBlock == uint256("0x00000435318be1017e97bf0c7b922d39bc622b11a6944722612792c4eda3a63a"));
         assert(genesis.hashMerkleRoot == uint256("0x57a535c3b04a15871c19d93c45abcb0cfb595221cb7b6fb4d8a6b15fbc7caca1"));
 
-        vSeeds.push_back(CDNSSeedData("SEED CUBIS 1", "140.82.60.191"));
-        vSeeds.push_back(CDNSSeedData("SEED CUBIS 2", "104.156.250.20"));
+       // vSeeds.push_back(CDNSSeedData("SEED CUBIS 1", "140.82.60.191"));
+       //  vSeeds.push_back(CDNSSeedData("SEED CUBIS 2", "104.156.250.20"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 33);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 25); //starts with 'B'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 91);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 173);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x03)(0x35)(0x25)(0x25).convert_to_container<std::vector<unsigned char> >();
@@ -178,23 +178,23 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0x32;
-        pchMessageStart[1] = 0x3c;
-        pchMessageStart[2] = 0xad;
-        pchMessageStart[3] = 0x2c;
+        pchMessageStart[0] = 0xa5;
+        pchMessageStart[1] = 0xc3;
+        pchMessageStart[2] = 0xd6;
+        pchMessageStart[3] = 0xc2;
         vAlertPubKey = ParseHex("04f4de9271dd20680dc205147dc6d82c486548d46183a5a00cad20c11259a4db2838fc06a172a95d6e0eae5317469eb62e6c1453b0b77f053275bb758713e34699");
-        nDefaultPort = 25334;
+        nDefaultPort = 76105;
         nEnforceBlockUpgradeMajority = 51;
         nRejectBlockOutdatedMajority = 75;
         nToCheckBlockUpgradeMajority = 100;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // CBC: 1 minute
         nTargetSpacing = 1 * 60;  // CBC: 1 minute
-        nLastPOWBlock = 300;
+        nLastPOWBlock = 10000;
         nMaturity = 25;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
-        nMaxMoneyOut = 43199500 * COIN;
+        nMaxMoneyOut = 40000000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1454124731;
@@ -205,7 +205,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet cubis addresses start with 'x' or 'y'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 85); // Testnet cubis addresses start with 'b'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet cubis script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         // Testnet cubis BIP32 pubkeys start with 'DRKV'
